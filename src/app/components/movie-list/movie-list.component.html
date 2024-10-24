@@ -1,0 +1,12 @@
+<div class="movies-list">
+    <section class="movies">
+        <h2>Más Populares</h2>
+        <div class="card" *ngFor="let movie of popularMovies">
+            <a 
+                [title]="movie.title + ' details'">
+                <img src="{{movie.image}}" alt="Portada de {{movie.title}}">
+                {{movie.title}}
+            </a>
+        </div>
+    </section>
+</div>

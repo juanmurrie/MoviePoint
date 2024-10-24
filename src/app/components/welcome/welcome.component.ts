@@ -12,10 +12,10 @@ export class WelcomeComponent {
   constructor(private router: Router){}
 
   goToLogIn(){
-    this.router.navigate(['/LogIn']);
+    this.router.navigate(['/home']);
   }
 
   goToRegister(){
-    this.router.navigate(['/Register'])
+    this.router.navigate(['/Register']);
   }
 }
