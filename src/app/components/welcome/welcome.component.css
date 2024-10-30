@@ -9,51 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .Logo {
-    height: 50px;
-    margin: 5px;
-  }
-  
-  .buttons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .LogIn-button {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-  }
 
-  .LogIn-button:hover {
-    background-color: darkgray;
-  }
-
-  .Register-button {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-  }
-  
-  .Register-button:hover {
-    background-color: darkgray;
-  }
-  
   .body {
     text-align: center;
     margin: auto;

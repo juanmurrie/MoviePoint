@@ -1,21 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-welcome',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.css'
 })
 export class WelcomeComponent {
-  constructor(private router: Router){}
-
-  goToLogIn(){
-    this.router.navigate(['/home']);
-  }
-
-  goToRegister(){
-    this.router.navigate(['/Register']);
-  }
 }

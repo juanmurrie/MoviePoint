@@ -1,16 +1,21 @@
-<nav class="header">
-  <div class="logo">
+<header class="header">
+  <div class="logo">MoviePoint
     <img src="assets/MoviePoint-logo.png" alt="MoviePoint Logo">
   </div>
-  <ul class="menu">
-    <li><a routerlink="/home">Inicio</a></li>
-    <li><a href="#">Géneros</a></li>
-    <li><a href="#">Favoritas</a></li>
-  </ul>
-  <div class="search">
-    <input type="text" placeholder="Buscar Peliculas...">
-  </div>
+
+  <nav class="menu" *ngIf="(auth.isAuthenticated$| async)">
+    <ul class="menu">
+      <li><a href="/home">Inicio</a></li>
+      <li><a href="#">Géneros</a></li>
+      <li><a href="#">Favoritas</a></li>
+    </ul>
+    <div class="search">
+      <input type="text" placeholder="Buscar Peliculas...">
+    </div>
+  </nav>
+
   <div class="buttons">
-    <button class="LogOut-button" type="button" (click)="goToLogOut()">Cerrar Sesion</button>
+    <button *ngIf="!(auth.isAuthenticated$| async)" class="LogIn-button" (click)="logIn()">Log In</button>
+    <button *ngIf="(auth.isAuthenticated$| async)" class="LogOut-button" (click)="logOut()">Log Out</button>
   </div>
-</nav>
+</header>
