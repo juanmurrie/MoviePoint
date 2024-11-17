@@ -8,6 +8,7 @@
     background-color: transparent; /* Fondo transparente */
     border: 1px solid white; /* Borde blanco */
     color: white; /* Color del texto */
+    font-family: 'Play', sans-serif;
     padding: 10px 20px; /* Espaciado interno */
     cursor: pointer; /* Cambiar cursor al pasar por encima */
     font-size: 16px; /* Tamaño del texto */
