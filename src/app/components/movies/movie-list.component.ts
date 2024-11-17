@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class MovieListComponent {
   popularMovies = [
-    { id: 1, title: 'Pelicula 1', image: 'assets/MoviePoint-logo.png' },
+    { id: 1, title: 'Pelicula 1', image: 'assets/MoviePoint-logo.webp' },
     { id: 2, title: 'Pelicula 2', image: 'assets/MoviePoint-logo.png' },
     { id: 3, title: 'Pelicula 3', image: 'assets/MoviePoint-logo.png' },
   ];

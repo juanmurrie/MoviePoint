@@ -1,73 +1,87 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #141414;
-    padding: 10px 20px;
-    color: white;
-  }
-  
-  .logo img {
-    height: 50px;
-  }
-  
-  .menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .menu li {
-    display: inline;
-  }
-  
-  .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .menu a:hover {
-    text-decoration: underline;
-  }
-  
-  .search input {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  .buttons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .LogIn-button {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-  }
+ .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141414; /* Color de fondo oscuro */
+  padding: 15px 30px; /* Aumenté el padding para mayor espacio */
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+}
 
-  .LogIn-button:hover {
-    background-color: darkgray;
-  }
+.logo {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el texto y la imagen */
+  font-size: 24px; /* Tamaño del texto del logo */
+  font-weight: bold; /* Pone el texto en negrita */
+}
 
-  .LogOut-button {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-  }
+.logo img {
+  height: 50px; /* Mantener la altura del logo */
+  margin-left: 10px; /* Espacio entre el texto y la imagen */
+}
 
-  .LogOut-button:hover {
-    background-color: darkgray;
-  }
-  
+.menu {
+  list-style: none; /* Eliminar los puntos de la lista */
+  display: flex; /* Mostrar en fila */
+  gap: 20px; /* Espacio entre los elementos del menú */
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  color: white; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 18px; /* Tamaño del texto */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.menu a:hover {
+  text-decoration: underline; /* Subrayar al pasar el mouse */
+  color: lightgray; /* Cambiar color en hover */
+}
+
+.search {
+  display: flex; /* Flexbox para alinear el input */
+  align-items: center; /* Centrar verticalmente el input */
+  margin-left: 20px; /* Espacio a la izquierda del input */
+}
+
+.search input {
+  background-color: #333; /* Fondo oscuro para el input */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 8px 12px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición para el fondo */
+}
+
+.search input:focus {
+  outline: none; /* Sin contorno al enfocar */
+  background-color: #444; /* Cambio de fondo al enfocar */
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.LogIn-button,
+.LogOut-button {
+  background-color: transparent; /* Fondo transparente */
+  border: 1px solid white; /* Borde blanco */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  font-size: 16px; /* Tamaño del texto */
+  margin: 0 5px; /* Espacio entre botones */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+.LogIn-button:hover,
+.LogOut-button:hover {
+  background-color: darkgray; /* Fondo gris oscuro al pasar el mouse */
+  color: black; /* Cambiar color del texto al pasar el mouse */
+}

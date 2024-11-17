@@ -23,6 +23,7 @@ export class HeaderComponent {
 
   logIn(){
     this.auth.loginWithRedirect();
+
   }
 
   logOut(){
