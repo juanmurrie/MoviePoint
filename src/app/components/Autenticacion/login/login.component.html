@@ -1,1 +1,4 @@
-<p>login works!</p>
+<div class="buttons">
+    <button *ngIf="!(auth.isAuthenticated$| async)" class="LogIn-button" (click)="logIn()">Log In</button>
+    <button *ngIf="(auth.isAuthenticated$| async)" class="LogOut-button" (click)="logOut()">Log Out</button>
+  </div>

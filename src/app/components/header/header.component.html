@@ -5,17 +5,14 @@
 
   <nav class="menu" *ngIf="(auth.isAuthenticated$| async)">
     <ul class="menu">
-      <li><a href="/home">Inicio</a></li>
-      <li><a href="#">Géneros</a></li>
-      <li><a href="#">Favoritas</a></li>
+      <li><a routerLink="/home">Inicio</a></li>
+      <li><a routerLink="#">Géneros</a></li>
+      <li><a routerLink="#">Favoritas</a></li>
     </ul>
     <div class="search">
       <input type="text" placeholder="Buscar Peliculas...">
     </div>
   </nav>
 
-  <div class="buttons">
-    <button *ngIf="!(auth.isAuthenticated$| async)" class="LogIn-button" (click)="logIn()">Log In</button>
-    <button *ngIf="(auth.isAuthenticated$| async)" class="LogOut-button" (click)="logOut()">Log Out</button>
-  </div>
+  <app-login></app-login>
 </header>
