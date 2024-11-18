@@ -1,0 +1,7 @@
+<div class="movies-list">
+    <div class="search">
+       <input type="text" #search placeholder="buscar pelicula">
+       <img (click)="getMovies(search.value)" src="../../../assets/lupa.svg" alt="buscador">
+   </div>
+   <app-movie-list></app-movie-list>
+</div>
