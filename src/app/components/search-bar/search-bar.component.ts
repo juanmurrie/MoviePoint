@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieListComponent } from "../movie-list/movie-list.component";
+import { MovieListComponent } from "../movies/movie-list.component";
 import { MoviesService } from '../../services/movies.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -13,6 +13,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class SearchBarComponent implements OnInit{
 
+  movies: any[]=[];
+
   constructor(private movieService: MoviesService){}
 
   ngOnInit(): void {
@@ -22,6 +24,7 @@ export class SearchBarComponent implements OnInit{
   getMovies(searchterm:string) {
     this.movieService.getMovies(searchterm).subscribe(data => {
       console.log(data);
+      this.movies=data.search;
     })
   }
 }
