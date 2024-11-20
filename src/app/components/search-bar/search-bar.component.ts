@@ -14,8 +14,69 @@ import { CommonModule } from '@angular/common';
 })
 export class SearchBarComponent implements OnInit{
 
-  movies: any[]=[];
-  populares =['{"Title":"The Lego Movie","Year":"2014","imdbID":"tt1490017","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_SX300.jpg"},{"Title":"The Simpsons Movie","Year":"2007","imdbID":"tt0462538","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BMzIxN2IzOGItOTcyZi00MTkzLWE4ZjktZTdlOWFiYWE4NzlmXkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Scary Movie","Year":"2000","imdbID":"tt0175142","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BZGRmMGRhOWMtOTk3Ni00OTRjLTkyYTAtYzA1M2IzMGE3NGRkXkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"The Super Mario Bros. Movie","Year":"2023","imdbID":"tt6718170","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BOGZlN2EzOTYtMzUzOS00NTM3LTg0MTQtZDVjZGM4YmJlNWNhXkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Bee Movie","Year":"2007","imdbID":"tt0389790","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BMjE1MDYxOTA4MF5BMl5BanBnXkFtZTcwMDE0MDUzMw@@._V1_SX300.jpg"},{"Title":"Scary Movie 2","Year":"2001","imdbID":"tt0257106","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BZjZlOTgzNmUtNjZlYS00NWFjLTg4ZDktMWY4NDIxMjVjZjdhXkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"The Lego Batman Movie","Year":"2017","imdbID":"tt4116284","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BMTcyNTEyOTY0M15BMl5BanBnXkFtZTgwOTAyNzU3MDI@._V1_SX300.jpg"},{"Title":"Scary Movie 3","Year":"2003","imdbID":"tt0306047","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BNDE2NTIyMjg2OF5BMl5BanBnXkFtZTYwNDEyMTg3._V1_SX300.jpg"},{"Title":"Scary Movie 4","Year":"2006","imdbID":"tt0362120","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BMjExNDQwM2QtYjFiNy00N2ZlLWE4ZGEtODdmYjY5NDdhNWE3XkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Not Another Teen Movie","Year":"2001","imdbID":"tt0277371","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BNjllYzVjNjItYjQ2Ni00OGU4LTlkYjItMDYxOTBlM2YzNDA5XkEyXkFqcGc@._V1_SX300.jpg"}'];
+  movies: any[] = [];
+  populares = [
+      {
+        "adult": false,
+        "backdrop_path": "/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg",
+        "genre_ids": [
+            878,
+            28,
+            12
+        ],
+        "id": 912649,
+        "original_language": "en",
+        "original_title": "Venom: The Last Dance",
+        "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+        "popularity": 3197.278,
+        "poster_path": "/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+        "release_date": "2024-10-22",
+        "title": "Venom: The Last Dance",
+        "video": false,
+        "vote_average": 6.468,
+        "vote_count": 765
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/2fxnTXr8NwyTFkunkimJkGkhqfy.jpg",
+        "genre_ids": [
+            18,
+            28,
+            27
+        ],
+        "id": 1118031,
+        "original_language": "es",
+        "original_title": "Apocalipsis Z: el principio del fin",
+        "overview": "When a kind of rabies that transforms people into aggressive creatures spreads across the planet, Manel isolates himself at home with his cat, relying on his wits to survive; but soon they must go out in search of food, by land and by sea, dodging many dangers.",
+        "popularity": 1861.349,
+        "poster_path": "/wIGJnIFQlESkC2rLpfA8EDHqk4g.jpg",
+        "release_date": "2024-10-04",
+        "title": "Apocalypse Z: The Beginning of the End",
+        "video": false,
+        "vote_average": 6.8,
+        "vote_count": 486
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/euYIwmwkmz95mnXvufEmbL6ovhZ.jpg",
+        "genre_ids": [
+            28,
+            12,
+            18
+        ],
+        "id": 558449,
+        "original_language": "en",
+        "original_title": "Gladiator II",
+        "overview": "Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist. With rage in his heart and the future of the Empire at stake, Lucius must look to his past to find strength and honor to return the glory of Rome to its people.",
+        "popularity": 1978.412,
+        "poster_path": "/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg",
+        "release_date": "2024-11-13",
+        "title": "Gladiator II",
+        "video": false,
+        "vote_average": 6.831,
+        "vote_count": 411
+    }
+  ];
   
   constructor(private movieService: MoviesService){}
   ngOnInit(): void {
@@ -24,11 +85,11 @@ export class SearchBarComponent implements OnInit{
   searched = false;
 
   getMovies(searchterm:string) {
-    this.movieService.getMovies(searchterm).subscribe(data => {
-      if(data.Response === "False"){
+    this.movieService.getMoviesBySearchTerm(searchterm).subscribe(response => {
+      if(response.results === "False"){
         this.movies = [];
       }else{
-        this.movies=data.Search;
+        this.movies = response.results;
       }
       this.searched = true;
     })

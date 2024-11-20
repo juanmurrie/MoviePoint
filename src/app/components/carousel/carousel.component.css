@@ -1,0 +1,77 @@
+.carousel{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+  }
+  
+  .movie-row {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
+    white-space: nowrap;
+    position: relative;
+    /*scrollbar-width: none;*/
+    
+  }
+  
+  .movie-card {
+    flex: 0 0 auto; 
+    width: 200px; 
+    text-align: center;
+  }
+  
+  .movie-card img {
+    width: 90%;
+    height: 90%;
+    border-radius: 8px;
+  }
+  
+  .movie-card h3 {
+    margin-top: 8px; /* Añade espacio entre la imagen y el texto */
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    color: #333; /* Mejora la legibilidad del texto */
+    overflow: hidden; /* Oculta el texto desbordado */
+    text-overflow: ellipsis; /* Añade puntos suspensivos (...) al texto largo */
+    white-space: nowrap; /* Mantiene el texto en una sola línea */
+  }
+
+  .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    z-index: 10;
+  }
+  
+  .btn.left {
+    left: 10px;
+  }
+  
+  .btn.right {
+    right: 10px;
+  }
+  
+  .btn i {
+    font-size: 20px; /* Tamaño del ícono */
+  }
+  
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+  }

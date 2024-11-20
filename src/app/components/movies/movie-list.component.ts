@@ -17,8 +17,8 @@ export class MovieListComponent {
     console.log(this.movie);   
   }
 
-  getImagen() {
-    return this.movie.Poster !== 'N/A' ? this.movie.Poster : 'https://via.placeholder.com/600'
+  getImage(path: string): string{
+    return `https://image.tmdb.org/t/p/w500${path}`;
   }
 
   popularMovies = [

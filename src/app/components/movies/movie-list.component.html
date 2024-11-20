@@ -1,9 +1,9 @@
 <div class="movie">
     <div>
-        <h1>{{movie.Title}}</h1>
+        <h1>{{movie.title}}</h1>
     </div>
     <div>
-        <img src="{{getImagen()}}" alt="movie.Title">
+        <img [src]="getImage(movie.poster_path)" [alt]="movie.title">
     </div>
     <div>
         <h3>{{movie.Year}}</h3>
