@@ -1,11 +1,14 @@
 <div class="carousel">
-    <h2>{{genreName}} </h2>
-    <div class="movie-row" #movieRow>
-        <button class="btn left" (click)="scrollLeft()"><i class="fa fa-chevron-left"></i></button>
-        <div class="movie-card" *ngFor="let movie of movies"> 
-            <p>{{movie.title}}</p>
-            <img [src]="getImage(movie.poster_path)" [alt]="'Portada de ' + movie.title">
+    <h2>{{ genreName }}</h2>
+    <div class="carousel-conteiner">
+      <button class="btn left" (click)="scrollLeft()"><i class="fa fa-chevron-left"></i></button>
+      <div class="movie-row" #movieRow>
+        <div class="movie-card" *ngFor="let movie of movies">
+          <img [src]="getImage(movie.poster_path)" [alt]="'Portada de ' + movie.title" />
+          <p class="movie-title">{{ movie.title }}</p>
         </div>
-        <button class="btn right" (click)="scrollRight()"><i class="fa fa-chevron-right"></i></button>
+      </div>
+      <button class="btn right" (click)="scrollRight()"><i class="fa fa-chevron-right"></i></button>
     </div>
-</div>
+  </div>
+  

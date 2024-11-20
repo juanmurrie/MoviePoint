@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { CommonModule } from '@angular/common';
 
@@ -26,13 +26,18 @@ export class CarouselComponent implements OnInit {
     return `https://image.tmdb.org/t/p/w500${path}`;
   }
 
-  scrollLeft(): void {
-    const carousel = document.querySelector('.carousel-items') as HTMLElement;
-    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+
+  @ViewChild('movieRow',{static: false}) movieRow!: ElementRef;
+
+  scrollLeft(){
+    if (this.movieRow){
+      this.movieRow.nativeElement.scrollBy({ left: -600, behavior: 'smooth' });
+    }
   }
 
-  scrollRight(): void {
-    const carousel = document.querySelector('.carousel-items') as HTMLElement;
-    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+  scrollRight(){
+    if(this.movieRow){
+      this.movieRow.nativeElement.scrollBy({ left: 600, behavior: 'smooth' });
+    }
   }
 }
