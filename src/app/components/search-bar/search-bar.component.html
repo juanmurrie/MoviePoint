@@ -3,5 +3,13 @@
        <input type="text" #search placeholder="buscar pelicula">
        <img (click)="getMovies(search.value)" src="../../../assets/lupa.svg" alt="buscador">
    </div>
-   <app-movie-list></app-movie-list>
+   <div *ngIf="(movies && movies.length > 0); else noMovies">   <!--si no buscaron muestra los mas populares-->
+    <app-movie-list *ngFor="let movie of movies" [movie]="movie"></app-movie-list>
+   </div>
+   <ng-template #noMovies>
+    <div *ngIf="searched === true">
+        <h2>No se encontraron películas</h2>
+    </div>
+    <app-movie-list *ngFor="let movie of populares" [movie]="movie"></app-movie-list>
+   </ng-template>
 </div>
