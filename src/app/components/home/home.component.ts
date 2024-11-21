@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviesService } from '../../services/movies.service';
 import { CarouselComponent } from "../carousel/carousel.component";
 import { CommonModule } from '@angular/common';
+import { SearchService } from '../../services/search.service';
+import { Genres } from '../../interfaces/genres';
 
 @Component({
   selector: 'app-home',
@@ -14,14 +16,19 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit{
 
- // genres: any[] = [];
+  genres: Genres[] = [];
+  isSearching = false
 
-  constructor(private movieService: MoviesService){}
+  constructor(private movieService: MoviesService, private searchService: SearchService){}
 
   ngOnInit(): void {
-    //this.movieService.getGenres().subscribe((response) => {
-    //  this.genres = response.genres;
-    //})
+    this.searchService.isSearching$.subscribe((estado) => {
+      this.isSearching = estado;
+    })
+
+    this.movieService.getGenres().subscribe((response) => {
+      this.genres = response.genres;
+    })
   }
 
 }

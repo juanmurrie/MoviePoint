@@ -10,6 +10,5 @@
     <div *ngIf="searched === true">      <!--si buscaron pero encuentra muestra los mas populares + mensaje-->
         <h2>No se encontraron películas</h2>
     </div>
-    <app-carousel *ngFor="let genre of genres" [genreID]="genre.id" [genreName]="genre.name"></app-carousel>
    </ng-template>
 </div>

@@ -3,17 +3,17 @@ import { MovieListComponent } from "../movies/movie-list.component";
 import { MoviesService } from '../../services/movies.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { CarouselComponent} from '../carousel/carousel.component'
 import { movies } from '../../interfaces/movies';
 import { moviesResponce } from '../../interfaces/moviesResponce';
 import { Genres } from '../../interfaces/genres';
 import { genresResponce } from '../../interfaces/genresResponce';
+import { SearchService } from '../../services/search.service';
 
 
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [MovieListComponent, HttpClientModule, CommonModule, CarouselComponent],
+  imports: [MovieListComponent, HttpClientModule, CommonModule],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.css',
 })
@@ -22,7 +22,7 @@ export class SearchBarComponent implements OnInit{
   movies: movies[] = [];
   genres: Genres[] = [];
   
-  constructor(private movieService: MoviesService){}
+  constructor(private movieService: MoviesService, private searchService: SearchService){}
   ngOnInit(): void {
     this.movieService.getGenres().subscribe((response : genresResponce) => {
       this.genres = response.genres;
@@ -39,6 +39,7 @@ export class SearchBarComponent implements OnInit{
         this.movies = response.results;
       }
       this.searched = true;
+      this.searchService.setIsSearching(searchterm !== '');
     })
   }
 }
