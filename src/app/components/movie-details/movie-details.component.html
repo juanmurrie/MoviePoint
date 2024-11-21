@@ -1,1 +1,33 @@
-<p>movie-details works!</p>
+<!-- <div class="movie-details" *ngIf="movieDetails">
+    <div class="movie-header">
+        <img class="movie-poster" [src]="getImage(movieDetails.poster_path)" alt="Portada de {{ movieDetails.title }}" />
+    <div class="movie-info">
+      <h2>{{ movieDetails.title }}</h2>
+      <div class="movie-meta">
+        <span class="year">{{ movieDetails.release_date }}</span>
+        <span class="duration">{{ movieDetails.runtime }} min</span>
+        <span class="genre">{{ movieDetails.genre_ids }}</span>
+      </div>
+      <p class="rating">⭐ {{ movieDetails.vote_average }}</p>
+    </div>
+
+</div> -->
+
+<div class="movie-details">
+    <!-- Poster -->
+    <div class="movie-poster">
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + movieDetails.poster_path" alt="Poster de {{ movieDetails.title }}">
+    </div>
+    
+    <!-- Título y Rating -->
+    <div class="movie-info">
+      <h1>{{ movieDetails.title }}</h1>
+      <p>{{ movieDetails.release_date | date:'yyyy' }} | {{ movieDetails.runtime }} min | {{ genreNames.join(', ') }}</p>
+      <p class="rating">★ {{ movieDetails.vote_average }} / 10</p>
+      <p class="overview">{{ movieDetails.overview }}</p>
+    </div>
+  
+    <!-- Enlace a la página oficial -->
+    <a [href]="movieDetails.homepage" target="_blank" class="official-link">Página oficial</a>
+</div>
+  

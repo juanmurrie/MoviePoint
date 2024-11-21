@@ -1,0 +1,114 @@
+/* .movie-details {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .movie-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .movie-poster {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  .movie-info {
+    flex: 1;
+  }
+  
+  .movie-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .movie-meta {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .movie-meta span {
+    font-size: 1rem;
+  }
+  
+  .rating {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .movie-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .additional-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .info-section {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .info-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .info-section p {
+    font-size: 1rem;
+  }
+   */
+  
+
+   .movie-details {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .movie-poster img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .movie-info h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .movie-meta {
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .rating {
+    font-size: 1.2rem;
+    color: #f5a623;
+  }
+  
+  .official-link {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .official-link:hover {
+    background-color: #555;
+  }
+  
