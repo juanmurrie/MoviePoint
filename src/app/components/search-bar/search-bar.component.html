@@ -7,9 +7,9 @@
     <app-movie-list *ngFor="let movie of movies" [movie]="movie"></app-movie-list>
    </div>
    <ng-template #noMovies>
-    <div *ngIf="searched === true">
+    <div *ngIf="searched === true">      <!--si buscaron pero encuentra muestra los mas populares + mensaje-->
         <h2>No se encontraron películas</h2>
     </div>
-    <app-movie-list *ngFor="let movie of populares" [movie]="movie"></app-movie-list>
+    <app-carousel *ngFor="let genre of genres" [genreID]="genre.id" [genreName]="genre.name"></app-carousel>
    </ng-template>
 </div>

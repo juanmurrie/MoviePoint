@@ -14,14 +14,14 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit{
 
-  genres: any[] = [];
+ // genres: any[] = [];
 
   constructor(private movieService: MoviesService){}
 
   ngOnInit(): void {
-    this.movieService.getGenres().subscribe((response) => {
-      this.genres = response.genres;
-    })
+    //this.movieService.getGenres().subscribe((response) => {
+    //  this.genres = response.genres;
+    //})
   }
 
 }
