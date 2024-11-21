@@ -4,6 +4,7 @@ import { MoviesService } from '../../services/movies.service';
 import { movies } from '../../interfaces/movies';
 import { ActivatedRoute } from '@angular/router';
 import { Genres } from '../../interfaces/genres';
+import {StorageService} from '../../services/storage.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -17,7 +18,7 @@ export class MovieDetailsComponent implements OnInit{
   movieDetails!: movies;
   genreNames: string[] = [];
 
-  constructor(private movieService:MoviesService, private route:ActivatedRoute){}
+  constructor(private movieService:MoviesService, private route:ActivatedRoute, private storageService:StorageService){}
 
   ngOnInit(): void {
     this.movieId = +this.route.snapshot.paramMap.get('id')!;//obtengo el id desde la url con paramMap y lo convierto a num
@@ -35,4 +36,16 @@ export class MovieDetailsComponent implements OnInit{
     return `https://image.tmdb.org/t/p/w500${path}`;
   }
 
+  esFav(movieId: number){
+    return this.storageService.estaEnFavoritos(movieId);
+  }
+
+  agregarFav(movieId: number){
+    this.storageService.guardaFav(movieId);
+      console.log('guardada con exito');
+  }
+  eliminarFav(movieId: number){
+    this.storageService.eliminaFav(movieId)
+      console.log('La película ya fue eliminada de favoritos');
+  }
 }
