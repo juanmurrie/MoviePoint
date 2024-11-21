@@ -1,114 +1,144 @@
-/* .movie-details {
-    background-color: #1e1e1e;
-    color: #f1f1f1;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 900px;
-    margin: auto;
-  }
-  
+/* Contenedor principal */
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  background-color: #242424;
+  color: #f1f1f1;
+  padding: 20px;
+  border-radius: 0px;
+  max-width: 1300px; /* Tamaño máximo del contenido */
+  width: 90%; 
+  height: 100vh; 
+  margin: auto; 
+  box-sizing: border-box;
+  overflow-y: auto; 
+}
+
+/* Encabezado de la película */
+.movie-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* Póster */
+.movie-poster {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Información de la película */
+.movie-info {
+  flex: 1;
+}
+
+.movie-info h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Metadatos */
+.movie-meta {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas */
+  gap: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.movie-meta span {
+  color: #ccc; /* Color claro para los detalles */
+}
+
+.rating i {
+  color: yellow;
+  margin-right: 5px;
+}
+
+/* Descripción */
+.movie-overview p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #dddddd;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Información adicional */
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Diseño responsivo */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.info-section {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.info-section h4 {
+  font-size: 1.2rem;
+  color: #999999;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  font-size: 1rem;
+  color: #f1f1f1;
+}
+
+/* Botón de reproducción */
+.play-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #444444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.play-button:hover {
+  background-color: #666666;
+}
+
+.play-button i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
   .movie-header {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    text-align: center;
   }
-  
+
   .movie-poster {
     width: 200px;
-    height: auto;
-    border-radius: 10px;
-    margin-right: 20px;
+    margin-bottom: 15px;
   }
-  
-  .movie-info {
-    flex: 1;
-  }
-  
+
   .movie-info h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
   }
-  
-  .movie-meta {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .movie-meta span {
-    font-size: 1rem;
-  }
-  
-  .rating {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-  
-  .movie-description {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
-  
-  .additional-info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .info-section {
-    background-color: #333;
-    padding: 15px;
-    border-radius: 5px;
-  }
-  
-  .info-section h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .info-section p {
-    font-size: 1rem;
-  }
-   */
-  
 
-   .movie-details {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .movie-poster img {
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .movie-info h1 {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
   .movie-meta {
-    margin-top: 20px;
-    font-size: 1.1rem;
+    justify-content: center;
   }
-  
-  .rating {
-    font-size: 1.2rem;
-    color: #f5a623;
+
+  .movie-overview p {
+    font-size: 1rem;
   }
-  
-  .official-link {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px;
-    background-color: #222;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .official-link:hover {
-    background-color: #555;
-  }
-  
+}

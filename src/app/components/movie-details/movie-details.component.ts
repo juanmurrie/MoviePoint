@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { movies } from '../../interfaces/movies';
 import { ActivatedRoute } from '@angular/router';
+import { Genres } from '../../interfaces/genres';
 
 @Component({
   selector: 'app-movie-details',
@@ -26,7 +27,7 @@ export class MovieDetailsComponent implements OnInit{
   fetchDetails(): void{
     this.movieService.getMovieDetails(this.movieId).subscribe((response) => {
       this.movieDetails = response;
-      this.genreNames = response.genres.map(g => g.name);//mapeo los nombres de los generos
+      this.genreNames = response.genres.map(g => g.name);//mapeo los nombres de los generos, porque movieDetails.genres es un array de objetos del tipo genres, por lo que no puedo acceder a name
     });
   }
 
