@@ -4,8 +4,10 @@
       <button class="btn left" (click)="scrollLeft()"><i class="fa fa-chevron-left"></i></button>
       <div class="movie-row" #movieRow>
         <div class="movie-card" *ngFor="let movie of movies">
-          <img [src]="getImage(movie.poster_path)" [alt]="'Portada de ' + movie.title" />
-          <p class="movie-title">{{ movie.title }}</p>
+          <a [routerLink]="['/movies', movie.id]" [title]="movie.title + ' details'">
+            <img [src]="getImage(movie.poster_path)" [alt]="'Portada de ' + movie.title" />
+          </a>
+          <p class="movie-title" [title]="movie.title">{{ movie.title }}</p>
         </div>
       </div>
       <button class="btn right" (click)="scrollRight()"><i class="fa fa-chevron-right"></i></button>

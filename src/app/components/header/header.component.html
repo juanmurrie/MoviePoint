@@ -5,9 +5,9 @@
 
   <nav class="menu" *ngIf="(auth.isAuthenticated$| async)">
     <ul class="menu">
-      <li><a routerLink="/home">Inicio</a></li>
-      <li><a routerLink="#">Géneros</a></li>
-      <li><a routerLink="#">Favoritas</a></li>
+      <li><a [routerLink]="['/home']">Inicio</a></li>
+      <li><a [routerLink]="['/home']">Géneros</a></li>
+      <li><a [routerLink]="['/home']">Favoritas</a></li>
     </ul>
   </nav>
 

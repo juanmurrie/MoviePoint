@@ -8,5 +8,6 @@ export const routes: Routes = [
     {path: '', redirectTo: "welcome", pathMatch: 'full'},
     {path: 'welcome', component: WelcomeComponent},
     {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    {path: 'movies/:id', component: MovieDetailsComponent},
     {path: '**', redirectTo: "welcome"},
 ];
