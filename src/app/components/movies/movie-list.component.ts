@@ -14,16 +14,9 @@ export class MovieListComponent {
 
   constructor(){}
   ngOnInit(): void { 
-    console.log(this.movie);   
   }
 
   getImage(path: string): string{
-    return `https://image.tmdb.org/t/p/w500${path}`;
+    return this.movie.poster_path !== null ? `https://image.tmdb.org/t/p/w500${path}` : 'https://via.placeholder.com/600';
   }
-
-  popularMovies = [
-    { id: 1, title: 'Pelicula 1', image: 'assets/MoviePoint-logo.webp' },
-    { id: 2, title: 'Pelicula 2', image: 'assets/MoviePoint-logo.webp' },
-    { id: 3, title: 'Pelicula 3', image: 'assets/MoviePoint-logo.webp' },
-  ];
 }
