@@ -1,3 +1,12 @@
 .movies-list{
     background-color: rgb(24, 24, 24);
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el ancho mínimo de cada columna */
+    row-gap: 30px;
+    column-gap: 60px;
+  }

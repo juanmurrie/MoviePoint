@@ -1,12 +1,13 @@
-<div class="movie">
-    <div>
-        <h1>{{movie.title}}</h1>
+<div class="movie-card">
+    <div class="imagen-contenedor">
+        <img [src]="getImage(movie.poster_path)" [alt]="'Poster for ' + movie.title" class="imagen">
     </div>
-    <div>
-        <img [src]="getImage(movie.poster_path)" [alt]="'Portada de ' + movie.title">
+    <div class="movie-info">
+      <h2>{{movie.title}}</h2>
+      <div class="movie-details">
+        <p>Release Date: {{movie.release_date}}</p>
+        <p>Rating: {{movie.vote_average}}</p>
+        <button (click)="agregarFav(movie.id)" class="favorite-button">Add to Favorites</button>
+      </div>
     </div>
-    <div>
-        <h3>{{movie.Year}}</h3>
-        <h3>{{movie.Type}}</h3>
-    </div>
-</div>
+  </div>
