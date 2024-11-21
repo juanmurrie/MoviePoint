@@ -13,8 +13,8 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {}
 
-  getMoviesByGenre(genreID: number): Observable<any> {
-    return this.http.get(`${this.apiURL}/discover/movie?${this.apiKey}&with_genres=${genreID}`);
+  getMoviesByGenre(genreID: number, page: number): Observable<any> {
+    return this.http.get(`${this.apiURL}/discover/movie?${this.apiKey}&with_genres=${genreID}&page=${page}`);//agregue page
   }
 
   getGenres(): Observable<any> {
