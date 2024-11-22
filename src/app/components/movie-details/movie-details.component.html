@@ -23,10 +23,10 @@
       </div>
       <div class="movie-actions">
         <ng-template [ngIf]="esFav(movieDetails.id)">
-          <button (click)="eliminarFav(movieDetails.id)" class="favorite-button">Eliminar de Favoritos</button>
+          <button (click)="eliminarFav(movieDetails.id)" class="favorite-button"><i class="fa fa-minus" [title]="'Quitar de favoritos'"></i></button>
         </ng-template>
         <ng-template [ngIf]="!esFav(movieDetails.id)">
-          <button (click)="agregarFav(movieDetails.id)" class="favorite-button">Agregar a Favoritos</button>
+          <button (click)="agregarFav(movieDetails.id)" class="favorite-button"><i class="fa fa-plus" [title]="'Agregar a favoritos'"></i></button>
         </ng-template>
       </div>
     </div>
