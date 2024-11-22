@@ -27,6 +27,11 @@ export class SearchBarComponent implements OnInit{
     this.movieService.getGenres().subscribe((response : genresResponce) => {
       this.genres = response.genres;
     })
+
+     // Recuperar las películas almacenadas previamente
+     this.searchService.movies$.subscribe((movies) => {
+       this.movies = movies;
+     });
   }
 
   @Output() searchedEstado = new EventEmitter<boolean>();
@@ -38,6 +43,7 @@ export class SearchBarComponent implements OnInit{
       }else{
         this.movies = response.results;
       }
+      this.searchService.setMovies(this.movies);
       this.searchedEstado.emit(this.movies.length === 0);
       this.searchService.setIsSearching(searchterm !== '');
     })

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { movies } from '../interfaces/movies';
 
 @Injectable({
   providedIn: 'root'
@@ -10,5 +11,13 @@ export class SearchService {
 
   setIsSearching(estado: boolean): void{
     this.isSearching.next(estado);
+  }
+
+
+  private moviesSubject = new BehaviorSubject<movies[]>([]);
+  movies$ = this.moviesSubject.asObservable();
+
+  setMovies(movies: movies[]): void {
+     this.moviesSubject.next(movies);
   }
 }
