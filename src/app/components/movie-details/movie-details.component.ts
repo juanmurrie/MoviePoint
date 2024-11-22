@@ -48,4 +48,12 @@ export class MovieDetailsComponent implements OnInit{
     this.storageService.eliminaFav(movieId)
       console.log('La película ya fue eliminada de favoritos');
   }
+
+  goToMovieHomePage(homepage: string): void{
+    if(homepage){
+      window.open(homepage, '_blank')
+    }else{
+      alert('No hay sitio web disponible para esta pelicula');
+    }
+  }
 }

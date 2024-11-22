@@ -22,12 +22,43 @@
   margin-bottom: 20px;
 }
 
-/* Póster */
+.movie-poster-container {
+  position: relative;
+  display: inline-block;
+}
+
+
 .movie-poster {
   width: 400px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.play-button:hover {
+  background-color: #666666;
+}
+
+.play-button i {
+  font-size: 2rem;
+  color: white;
 }
 
 /* Información de la película */
@@ -92,29 +123,6 @@
 .info-section p {
   font-size: 1rem;
   color: #f1f1f1;
-}
-
-/* Botón de reproducción */
-.play-button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #444444;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-
-.play-button:hover {
-  background-color: #666666;
-}
-
-.play-button i {
-  font-size: 1.5rem;
-  color: white;
 }
 
 /* Ajustes para pantallas pequeñas */
