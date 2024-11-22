@@ -1,24 +1,24 @@
 .buttons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .LogIn-button,
-  .LogOut-button {
-    background-color: transparent; /* Fondo transparente */
-    border: 1px solid white; /* Borde blanco */
-    color: white; /* Color del texto */
-    font-family: 'Play', sans-serif;
-    padding: 10px 20px; /* Espaciado interno */
-    cursor: pointer; /* Cambiar cursor al pasar por encima */
-    font-size: 16px; /* Tamaño del texto */
-    margin: 0 5px; /* Espacio entre botones */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
-  }
-  
-  .LogIn-button:hover,
-  .LogOut-button:hover {
-    background-color: darkgray; /* Fondo gris oscuro al pasar el mouse */
-    color: black; /* Cambiar color del texto al pasar el mouse */
-  }
+  display: flex;
+  align-items: center;
+}
+
+.LogIn-button,
+.LogOut-button {
+  background-color: transparent;
+  border: 1px solid white; 
+  color: white; 
+  font-family: 'Play', sans-serif;
+  padding: 10px 20px; 
+  cursor: pointer; 
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.LogIn-button:hover,
+.LogOut-button:hover {
+  background-color: darkgray;
+  color: black;
+}

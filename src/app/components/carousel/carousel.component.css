@@ -1,10 +1,9 @@
- /* Estilos generales del carrusel */
 .carousel {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin: 20px auto;
-  width: 90%; /* Ajusta el ancho del carrusel */
+  width: 90%;
 }
 
 .carousel h2 {
@@ -15,14 +14,12 @@
   color: goldenrod;
 }
 
-
 .carousel-conteiner {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
 }
-
 
 .movie-row {
   display: flex;
@@ -32,13 +29,12 @@
   padding: 10px 0;
   width: 100%;
   white-space: nowrap;
-  scrollbar-width: none; /* Oculta scrollbar en Firefox */
+  scrollbar-width: none;
 }
 
 .movie-row::-webkit-scrollbar {
-  display: none; /* Oculta scrollbar en Chrome/Safari */
+  display: none;
 }
-
 
 .movie-card {
   flex: 0 0 auto;
@@ -98,7 +94,6 @@
 }
 
 .btn:hover {
-  /*background-color: rgba(255, 255, 255, 0.8);*/
   background-color: rgb(24, 24, 24);
   color: black;
   transition: background-color 0.3s ease-in-out;

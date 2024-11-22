@@ -28,7 +28,7 @@ export class SearchBarComponent implements OnInit{
       this.genres = response.genres;
     })
 
-     // Recuperar las películas almacenadas previamente
+     
      this.searchService.movies$.subscribe((movies) => {
        this.movies = movies;
      });

@@ -21,14 +21,14 @@ export class MovieDetailsComponent implements OnInit{
   constructor(private movieService:MoviesService, private route:ActivatedRoute, private storageService:StorageService){}
 
   ngOnInit(): void {
-    this.movieId = +this.route.snapshot.paramMap.get('id')!;//obtengo el id desde la url con paramMap y lo convierto a num
+    this.movieId = +this.route.snapshot.paramMap.get('id')!;
     this.fetchDetails();
   }
 
   fetchDetails(): void{
     this.movieService.getMovieDetails(this.movieId).subscribe((response) => {
       this.movieDetails = response;
-      this.genreNames = response.genres.map(g => g.name);//mapeo los nombres de los generos, porque movieDetails.genres es un array de objetos del tipo genres, por lo que no puedo acceder a name
+      this.genreNames = response.genres.map(g => g.name);
     });
   }
 
@@ -42,11 +42,9 @@ export class MovieDetailsComponent implements OnInit{
 
   agregarFav(movieId: number){
     this.storageService.guardaFav(movieId);
-      console.log('guardada con exito');
   }
   eliminarFav(movieId: number){
     this.storageService.eliminaFav(movieId)
-      console.log('La película ya fue eliminada de favoritos');
   }
 
   goToMovieHomePage(homepage: string): void{

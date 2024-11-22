@@ -1,22 +1,19 @@
-/* Estilo global */
 body {
   margin: 0;
   overflow-x: hidden;
 }
 
-/* Header principal */
 .header {
   display: flex;
   justify-content: space-between;
   font-family: 'Play', sans-serif;
   align-items: center;
-  background-color: #000; /* Fondo negro */
+  background-color: #000;
   padding: 20px 30px;
   color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo del logo */
 .logo {
   display: flex;
   align-items: center;
@@ -30,7 +27,6 @@ body {
   margin-left: 10px;
 }
 
-/* Estilo del menú */
 .menu {
   list-style: none;
   display: flex;
@@ -42,17 +38,16 @@ body {
 }
 
 .menu a {
-  color: white; /* Color de los enlaces en gris */
+  color: white;
   text-decoration: none;
   font-size: 18px;
   transition: color 0.5s ease;
 }
 
 .menu a:hover {
-  color: grey; /* Blanco al hacer hover */
+  color: grey;
 }
 
-/* Responsive para el header */
 @media (max-width: 720px) {
   .header {
     flex-direction: column;

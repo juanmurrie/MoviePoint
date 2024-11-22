@@ -15,7 +15,7 @@ export class MoviesService {
   constructor(private http: HttpClient) {}
 
   getMoviesByGenre(genreID: number, page: number): Observable<moviesResponce> {
-    return this.http.get<moviesResponce>(`${this.apiURL}/discover/movie?${this.apiKey}&with_genres=${genreID}&page=${page}&language=es-ES`);//agregue page
+    return this.http.get<moviesResponce>(`${this.apiURL}/discover/movie?${this.apiKey}&with_genres=${genreID}&page=${page}&language=es-ES`);
   }
 
   getGenres(): Observable<genresResponce> {

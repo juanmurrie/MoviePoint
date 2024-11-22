@@ -18,13 +18,13 @@ export class CarouselComponent implements OnInit,AfterViewInit {
 
   constructor(private movieService: MoviesService){}
 
-  //agregue para que se cargen mas paginas
+  
   ngOnInit(): void {
     this.loadMovies();
   }
 
   ngAfterViewInit(): void {
-    this.movieRow.nativeElement.addEventListener('scroll', () => {//uso el evento scroll que tiene un listener para saber si se llego al final
+    this.movieRow.nativeElement.addEventListener('scroll', () => {
       this.checkEnd();
     })
   }  
@@ -39,7 +39,7 @@ export class CarouselComponent implements OnInit,AfterViewInit {
     return `https://image.tmdb.org/t/p/w500${path}`;
   }
 
-  @ViewChild('movieRow',{static: false}) movieRow!: ElementRef; //es un decorador de angular que me permite acceder a elementos del DOM o otrso componentes hijos dentro de la plantilla del componente, movieRow es el identificador utilizado en el html como #movieRow para referenciar un elemento especifico. el static false es para que esta referencia se inicialice depuses de renderizar la vista, al generarse dinamicamnte con un for es util en este caso. Usar Viewchild y elementref permite manipular un contenedor especifico del DOM, incluso cuando hay multiples instancias del componente en la misma pagina.
+  @ViewChild('movieRow',{static: false}) movieRow!: ElementRef;
   scrollLeft(){
     if (this.movieRow){
       this.movieRow.nativeElement.scrollBy({ left: -600, behavior: 'smooth' });
@@ -56,7 +56,7 @@ export class CarouselComponent implements OnInit,AfterViewInit {
     if(this.movieRow){
       const elementMovieRow = this.movieRow.nativeElement;
 
-      if(elementMovieRow.scrollLeft + elementMovieRow.clientWidth >= elementMovieRow.scrollWidth - 10){ //evaluo si el usuario llego al final con un margen de 10px
+      if(elementMovieRow.scrollLeft + elementMovieRow.clientWidth >= elementMovieRow.scrollWidth - 10){ 
         this.currentPage++;
         this.loadMovies();
       }

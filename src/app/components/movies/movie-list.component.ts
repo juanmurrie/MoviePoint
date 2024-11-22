@@ -20,17 +20,4 @@ export class MovieListComponent {
   getImage(path: string): string{
     return this.movie.poster_path !== null ? `https://image.tmdb.org/t/p/w500${path}` : 'https://via.placeholder.com/600';
   }
-  
-  esFav(movieId: number){
-    return this.storageService.estaEnFavoritos(movieId);
-  }
-
-  agregarFav(movieId: number){
-    this.storageService.guardaFav(movieId);
-      console.log('guardada con exito');
-  }
-  eliminarFav(movieId: number){
-    this.storageService.eliminaFav(movieId)
-      console.log('La película ya fue eliminada de favoritos');
-  }
 }
