@@ -2,7 +2,7 @@
 .movie-details {
   display: flex;
   flex-direction: column;
-  background-color: #242424;
+  background-color: rgb(24, 24, 24);
   color: #f1f1f1;
   padding: 20px;
   border-radius: 0px;
