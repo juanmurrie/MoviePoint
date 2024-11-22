@@ -6,8 +6,11 @@
         </div>
         <app-carousel *ngFor="let genre of genres" [genreID]="genre.id" [genreName]="genre.name"></app-carousel> 
     </ng-container>
-    <div class="no-movies" *ngIf="noMovies">
+    <div class="no-movies" *ngIf="noMovies && isSearching">
         <h2>No se encontraron peliculas!</h2>
+        <div *ngIf="favoritos.length > 0">
+            <app-fav-carousel></app-fav-carousel>
+        </div>
         <app-carousel *ngFor="let genre of genres" [genreID]="genre.id" [genreName]="genre.name"></app-carousel>
     </div>
 </div>
