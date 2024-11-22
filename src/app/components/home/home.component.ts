@@ -17,7 +17,8 @@ import { Genres } from '../../interfaces/genres';
 export class HomeComponent implements OnInit{
 
   genres: Genres[] = [];
-  isSearching = false
+  isSearching = false;
+  noMovies = false;
 
   constructor(private movieService: MoviesService, private searchService: SearchService){}
 
@@ -29,6 +30,10 @@ export class HomeComponent implements OnInit{
     this.movieService.getGenres().subscribe((response) => {
       this.genres = response.genres;
     })
+  }
+
+  handSearchEvent(searchedEstado: boolean): void{
+    this.noMovies = searchedEstado;
   }
 
 }
