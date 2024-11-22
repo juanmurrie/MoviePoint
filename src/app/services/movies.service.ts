@@ -29,4 +29,8 @@ export class MoviesService {
   getMovieDetails(movieId: number): Observable<movies> {
     return this.http.get<movies>(`${this.apiURL}/movie/${movieId}?${this.apiKey}&language=es-ES`);
   }
+
+  getMovieByID(movieId: number): Observable<movies> {
+    return this.http.get<movies>(`${this.apiURL}/movie/${movieId}?${this.apiKey}&language=es-ES`);
+  }
 }

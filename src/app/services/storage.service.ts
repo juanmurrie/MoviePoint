@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
-//password A33Zu!2G$F4isk$
-  private apiUrl = 'http://tu-servidor/favoritos';
   favoritos: number[] = [];
 
   constructor(private http: HttpClient) { }
