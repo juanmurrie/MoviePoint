@@ -8,12 +8,11 @@ import { HttpClient } from '@angular/common/http';
 export class StorageService {
   favoritos: number[] = [];
 
-  constructor(private http: HttpClient) { }
-
-  ngOnInit() {
+  constructor(private http: HttpClient) { 
     const favoritosGuardados = localStorage.getItem('favoritos');
     if (favoritosGuardados) {
-      this.favoritos = JSON.parse(favoritosGuardados);  
+      this.favoritos = JSON.parse(favoritosGuardados);   
+
     }
   }
 
