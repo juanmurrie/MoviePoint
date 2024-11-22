@@ -21,13 +21,16 @@ export class MovieListComponent {
     return this.movie.poster_path !== null ? `https://image.tmdb.org/t/p/w500${path}` : 'https://via.placeholder.com/600';
   }
   
+  esFav(movieId: number){
+    return this.storageService.estaEnFavoritos(movieId);
+  }
+
   agregarFav(movieId: number){
-    if(!this.storageService.estaEnFavoritos(movieId)){
-      this.storageService.guardaFav(movieId);
+    this.storageService.guardaFav(movieId);
       console.log('guardada con exito');
-    } else {
-      this.storageService.eliminaFav(movieId)
+  }
+  eliminarFav(movieId: number){
+    this.storageService.eliminaFav(movieId)
       console.log('La película ya fue eliminada de favoritos');
-    }
   }
 }
