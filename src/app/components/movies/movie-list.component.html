@@ -1,5 +1,5 @@
 <div class="movie-card">
-    <div class="imagen-contenedor">
+    <div class="imagen-contenedor" [routerLink]="['/movies', movie.id]" [title]="movie.title + ' details'">
         <img [src]="getImage(movie.poster_path)" [alt]="'Poster for ' + movie.title" class="imagen">
     </div>
     <div class="movie-info">
@@ -7,12 +7,6 @@
         <div class="movie-details">
             <p>Release Date: {{movie.release_date}}</p>
             <p>Rating: {{movie.vote_average}}</p>
-            <div *ngIf="esFav(movie.id)">
-                <button (click)="eliminarFav(movie.id)" class="favorite-button">eliminar de favoritos</button>
-            </div>
-            <div *ngIf="!esFav(movie.id)">
-                <button (click)="agregarFav(movie.id)" class="favorite-button">agregar a favoritos</button>
-            </div>
         </div>
     </div>
 </div>
