@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, input } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import {StorageService} from '../../services/storage.service'
 
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.css'
 })
