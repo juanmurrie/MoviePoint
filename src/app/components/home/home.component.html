@@ -1,10 +1,14 @@
 <div class="home">
-    <app-search-bar></app-search-bar>
+    <app-search-bar (searchedEstado)="handSearchEvent($event)"></app-search-bar>
     <ng-container *ngIf="!isSearching">
         <div *ngIf="favoritos.length > 0">
             <app-fav-carousel></app-fav-carousel>
         </div>
         <app-carousel *ngFor="let genre of genres" [genreID]="genre.id" [genreName]="genre.name"></app-carousel> 
     </ng-container>
+    <div class="no-movies" *ngIf="noMovies">
+        <h2>No se encontraron peliculas!</h2>
+        <app-carousel *ngFor="let genre of genres" [genreID]="genre.id" [genreName]="genre.name"></app-carousel>
+    </div>
 </div>
 

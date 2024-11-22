@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MovieListComponent } from "../movies/movie-list.component";
 import { MoviesService } from '../../services/movies.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +29,7 @@ export class SearchBarComponent implements OnInit{
     })
   }
 
-  searched = false;
+  @Output() searchedEstado = new EventEmitter<boolean>();
 
   getMovies(searchterm:string) {
     this.movieService.getMoviesBySearchTerm(searchterm).subscribe((response : moviesResponce )=> {
@@ -38,7 +38,7 @@ export class SearchBarComponent implements OnInit{
       }else{
         this.movies = response.results;
       }
-      this.searched = true;
+      this.searchedEstado.emit(this.movies.length === 0);
       this.searchService.setIsSearching(searchterm !== '');
     })
   }

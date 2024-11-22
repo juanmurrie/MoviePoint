@@ -1,12 +1,9 @@
-<div class="movie-card">
-    <div class="imagen-contenedor" [routerLink]="['/movies', movie.id]" [title]="movie.title + ' details'">
-        <img [src]="getImage(movie.poster_path)" [alt]="'Poster for ' + movie.title" class="imagen">
-    </div>
-    <div class="movie-info">
-        <h2>{{movie.title}}</h2>
-        <div class="movie-details">
-            <p>Release Date: {{movie.release_date}}</p>
-            <p>Rating: {{movie.vote_average}}</p>
-        </div>
+<div class="movie">
+    <div class="movie-card">
+        <a [routerLink]="['/movies', movie.id]" [title]="movie.title + ' details'">
+            <img [src]="getImage(movie.poster_path)" [alt]="'Poster for ' + movie.title">
+        </a>
+        <p class="movie-title" [title]="movie.title">{{movie.title}}</p>
+        <p class="movie-year">{{movie.release_date | date: 'yyyy'}}</p>
     </div>
 </div>

@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit{
 
   genres: Genres[] = [];
   isSearching = false
+  noMovies = false;
   favoritos: number[]=[];
 
   constructor(private movieService: MoviesService, private searchService: SearchService, private storageService: StorageService){}
@@ -33,6 +34,10 @@ export class HomeComponent implements OnInit{
     this.movieService.getGenres().subscribe((response) => {
       this.genres = response.genres;
     })
+  }
+
+  handSearchEvent(searchedEstado: boolean): void{
+    this.noMovies = searchedEstado;
   }
 
 }
